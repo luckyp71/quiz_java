@@ -8,7 +8,7 @@ import com.game.quiz.models.Quiz;
 import com.game.quiz.service.QuizService;
 
 public class QuizServiceImpl implements QuizService {
-
+	
 	List<Quiz> questionList = new ArrayList<>();
 
 	@Override

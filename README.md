@@ -1,4 +1,5 @@
 # Quiz Game using Java
+Quiz Game (Guess The Word) in Bahasa using Java
 
 ## Prerequisites:
 1. JDK 1.8

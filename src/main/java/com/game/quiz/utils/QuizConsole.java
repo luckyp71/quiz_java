@@ -5,6 +5,7 @@ import java.io.IOException;
 import java.io.InputStreamReader;
 
 import com.game.quiz.service_impl.CommonServiceImpl;
+import com.game.quiz.service_impl.MessageServiceImpl;
 import com.game.quiz.service_impl.QuizServiceImpl;
 
 public class QuizConsole {
@@ -12,6 +13,7 @@ public class QuizConsole {
 	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 	QuizServiceImpl quizService = new QuizServiceImpl();
 	CommonServiceImpl commonService = new CommonServiceImpl();
+	MessageServiceImpl messageService = new MessageServiceImpl();
 
 	public void start() {
 
@@ -55,10 +57,10 @@ public class QuizConsole {
 
 			boolean message = commonService.checkAnswer(question, jawab.trim());
 			if (!message) {
-				System.out.println("MAAF ANDA SALAH!!!! Silahkan mencoba lagi!!!!!\n");
+				messageService.onError();
 				throw new IOException();
 			}
-			System.out.println("BENAR SEKALI!!!!!! Selamat, point anda: " + commonService.getScore() + "!\n");
+			messageService.onSuccess(commonService.getScore());
 			counter = counter + 1;
 		} catch (IOException e) {
 			this.display(counter);
