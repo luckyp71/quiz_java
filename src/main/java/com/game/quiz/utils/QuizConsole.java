@@ -14,33 +14,52 @@ public class QuizConsole {
 	CommonServiceImpl commonService = new CommonServiceImpl();
 
 	public void start() {
-		
+
 		quizService.addQuestion("buku");
 		quizService.addQuestion("rumah");
-		quizService.addQuestion("mobil");
-		
+		quizService.addQuestion("truk");
+		quizService.addQuestion("nampan");
+		quizService.addQuestion("televisi");
+		quizService.addQuestion("radio");
+		quizService.addQuestion("divisi");
+		quizService.addQuestion("dividen");
+		quizService.addQuestion("saham");
+		quizService.addQuestion("bahasa");
+		quizService.addQuestion("pemrograman");
+		quizService.addQuestion("jaringan");
+		quizService.addQuestion("saraf");
+		quizService.addQuestion("buatan");
+		quizService.addQuestion("keuangan");
+		quizService.addQuestion("otomatisasi");
+		quizService.addQuestion("proses");
+		quizService.addQuestion("teknokrat");
+		quizService.addQuestion("teknokratik");
+		quizService.addQuestion("cendekiawan");
+		quizService.addQuestion("latihan");
+		quizService.addQuestion("belajar");
+
 		for (int i = 0; i < quizService.getQustions().size(); i++) {
 			display(i);
 		}
 	}
-	
+
 	public void display(int counter) {
 		try {
 			String question = quizService.getQuestion(counter);
 			String randomWord = commonService.generateRandomWord(question);
-			
+
 			String tebak = "Tebak: " + randomWord + "\nJawab: ";
 			System.out.print(tebak);
-			
+
 			String jawab = input.readLine();
-				
+
 			boolean message = commonService.checkAnswer(question, jawab.trim());
 			if (!message) {
-				System.out.println("Jawaban anda salah, aduh sayang sekali\n");
+				System.out.println("MAAF ANDA SALAH!!!! Silahkan mencoba lagi!!!!!\n");
 				throw new IOException();
 			}
-			System.out.println("Jawaban anda benar sekali, selamat!!!\nScore: "+commonService.getScore()+"\n");
-			counter=counter+1;
+			System.out.println("BENAR SEKALI!!!!!! Selamat, point anda: " + commonService.getScore() + "!\n");
+			counter = counter + 1;
 		} catch (IOException e) {
 			this.display(counter);
 		}
