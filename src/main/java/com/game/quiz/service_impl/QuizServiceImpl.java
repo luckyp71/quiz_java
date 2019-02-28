@@ -28,5 +28,4 @@ public class QuizServiceImpl implements QuizService {
 		questionList.add(new Quiz(question));
 		return "success";
 	}
-
 }

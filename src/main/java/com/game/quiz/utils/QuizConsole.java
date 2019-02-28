@@ -3,6 +3,7 @@ package com.game.quiz.utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.Logger;
 
 import com.game.quiz.service_impl.CommonServiceImpl;
 import com.game.quiz.service_impl.QuizServiceImpl;
@@ -12,7 +13,8 @@ public class QuizConsole {
 	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
 	QuizServiceImpl quizService = new QuizServiceImpl();
 	CommonServiceImpl commonService = new CommonServiceImpl();
-
+	Logger logger = Logger.getLogger(QuizConsole.class.getName());
+	
 	public void start() {
 		
 		quizService.addQuestion("buku");
@@ -36,11 +38,11 @@ public class QuizConsole {
 				
 			boolean message = commonService.checkAnswer(question, jawab.trim());
 			if (!message) {
-				System.out.println("Jawaban anda salah, aduh sayang sekali\n");
+				logger.info("Jawaban anda salah, aduh sayang sekali\n");
 				throw new IOException();
 			}
-			System.out.println("Jawaban anda benar sekali, selamat!!!\nScore: "+commonService.getScore()+"\n");
-			counter++;
+			logger.info("Jawaban anda benar sekali, selamat!!!\nScore: "+commonService.getScore()+"\n");
+			counter=counter+1;
 		} catch (IOException e) {
 			this.display(counter);
 		}
