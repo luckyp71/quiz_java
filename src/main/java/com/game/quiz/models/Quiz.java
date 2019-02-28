@@ -4,8 +4,6 @@ public class Quiz {
 
 	private String question;
 	
-	public Quiz() {};
-	
 	public Quiz(String question) {
 		this.question = question;
 	}
