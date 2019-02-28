@@ -1,4 +1,4 @@
-# Quiz
+# Quiz Game using Java
 
 ## Prerequisites:
 1. JDK 1.8
