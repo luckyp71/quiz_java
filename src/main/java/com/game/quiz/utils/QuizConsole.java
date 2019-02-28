@@ -56,7 +56,7 @@ public class QuizConsole {
 			
 			/** Prevent null pointer exception message raised when we force quit the program***/
 			if(jawab == null) {
-				jawab = "";
+				System.exit(0);
 			}
 			/*********************************************************************************/
 			
