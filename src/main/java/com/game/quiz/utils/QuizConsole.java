@@ -57,11 +57,13 @@ public class QuizConsole {
 			boolean message = commonService.checkAnswer(question, jawab.trim());
 			if (!message) {
 				messageService.onError();
-				throw new IOException();
+				throw new NotMatchException();
 			}
 			messageService.onSuccess(commonService.getScore());
 			counter = counter + 1;
 		} catch (IOException e) {
+			e.printStackTrace();
+		} catch (NotMatchException ne) {
 			this.display(counter);
 		}
 	}

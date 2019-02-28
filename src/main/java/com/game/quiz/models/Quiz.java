@@ -4,7 +4,10 @@ public class Quiz {
 
 	private String question;
 	
-	//Constructor
+	//Default constructor
+	public Quiz() {}
+	
+	//Constructor with question as it param
 	public Quiz(String question) {
 		this.question = question;
 	}
