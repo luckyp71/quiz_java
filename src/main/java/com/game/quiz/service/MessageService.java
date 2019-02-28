@@ -6,5 +6,5 @@ public interface MessageService {
 	public void onSuccess(int score);
 
 	// Display error message
-	public void onError();
+	public String onError();
 }

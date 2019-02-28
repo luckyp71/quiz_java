@@ -53,17 +53,23 @@ public class QuizConsole {
 			System.out.print(tebak);
 
 			String jawab = input.readLine();
-
+			
+			/** Prevent null pointer exception message raised when we force quit the program***/
+			if(jawab == null) {
+				jawab = "";
+			}
+			/*********************************************************************************/
+			
 			boolean message = commonService.checkAnswer(question, jawab.trim());
 			if (!message) {
-				messageService.onError();
-				throw new NotMatchException();
+				throw new NotMatchException(messageService.onError());
 			}
 			messageService.onSuccess(commonService.getScore());
 			counter = counter + 1;
 		} catch (IOException e) {
 			e.printStackTrace();
 		} catch (NotMatchException ne) {
+			System.out.println(ne.getLocalizedMessage());
 			this.display(counter);
 		}
 	}

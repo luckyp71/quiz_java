@@ -32,9 +32,9 @@ public class MessageServiceImpl implements MessageService {
 	}
 
 	@Override
-	public void onError() {
+	public String onError() {
 		randomIndex = new Random().nextInt(errorMessages.length);
-		System.out.println(errorMessages[randomIndex]);
+		return errorMessages[randomIndex];
 	}
 	
 }
