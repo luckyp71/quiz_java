@@ -16,7 +16,6 @@ public class QuizConsole {
 	MessageServiceImpl messageService = new MessageServiceImpl();
 
 	public void start() {
-
 		quizService.addQuestion("buku");
 		quizService.addQuestion("rumah");
 		quizService.addQuestion("truk");
