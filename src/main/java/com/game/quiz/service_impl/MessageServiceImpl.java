@@ -13,10 +13,11 @@ public class MessageServiceImpl implements MessageService {
 	public MessageServiceImpl() {
 		this.successMessages = new String[] {"BENAR SEKALI!!!!!! Selamat, point anda: ",
 											 "TEPAT!!!!! Selamat, point anda: ",
-											 "BETUL SEKALI!!!!, point anda: ",
-											 "TEPAT SEKALI!!!!, point anda: ",
-											 "SANGAT TEPAT!!!!, point anda: ",
-											 "COCOK!!!!!! Silahkan mencoba lagi!!!!\n"};
+											 "BETUL SEKALI!!!! Selamat, selamat, point anda: ",
+											 "TEPAT SEKALI!!!! Selamat, point anda: ",
+											 "SANGAT TEPAT!!!! Selamat, point anda: ",
+											 "COCOK!!!!!! Selamat, point anda:",
+											 "SANGAT COCOK!!!!!! Selamat, selamat, point anda:"};
 		
 		this.errorMessages = new String[] {"MAAF ANDA SALAH!!!! Silahkan mencoba lagi!!!!!\n",
 										   "MOHON MAAF, JAWABAN ANDA INI SALAH!!!! Silahkan mencoba lagi!!!!\n",
