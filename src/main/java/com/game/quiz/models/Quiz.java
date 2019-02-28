@@ -4,6 +4,7 @@ public class Quiz {
 
 	private String question;
 	
+	//Constructor
 	public Quiz(String question) {
 		this.question = question;
 	}

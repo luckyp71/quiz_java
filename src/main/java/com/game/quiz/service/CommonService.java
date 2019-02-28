@@ -2,13 +2,13 @@ package com.game.quiz.service;
 
 public interface CommonService {
 	
-	//Generate Random Word
+	//Generate Radom Word from Input
 	public String generateRandomWord(String input);
 	
-	//Check Answer
+	//Check wheter the answer equals to question
 	public boolean checkAnswer(String question, String answer);
 	
-	//Add Score
+	//Get score when user answer correctly
 	public int getScore();
 
 }
