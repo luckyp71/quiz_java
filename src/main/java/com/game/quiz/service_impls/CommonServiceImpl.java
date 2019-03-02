@@ -1,10 +1,10 @@
-package com.game.quiz.service_impl;
+package com.game.quiz.service_impls;
 
+import java.security.SecureRandom;
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Random;
 
-import com.game.quiz.service.CommonService;
+import com.game.quiz.services.CommonService;
 
 public class CommonServiceImpl implements CommonService{
 	
@@ -17,9 +17,9 @@ public class CommonServiceImpl implements CommonService{
 		char[] chars = new char[input.length()];
 
 		for (int i = 0; i < input.length(); i++) {
-			int rand = new Random().nextInt(input.length());
+			int rand = new SecureRandom().nextInt(input.length());
 			while (indexes.contains(rand)) {
-				rand = new Random().nextInt(input.length());
+				rand = new SecureRandom().nextInt(input.length());
 			}
 			indexes.add(rand);
 		}

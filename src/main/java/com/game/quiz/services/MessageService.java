@@ -1,4 +1,4 @@
-package com.game.quiz.service;
+package com.game.quiz.services;
 
 public interface MessageService {
 	

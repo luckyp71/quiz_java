@@ -3,10 +3,12 @@ package com.game.quiz.utils;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
+import java.util.logging.LogManager;
+import java.util.logging.Logger;
 
-import com.game.quiz.service_impl.CommonServiceImpl;
-import com.game.quiz.service_impl.MessageServiceImpl;
-import com.game.quiz.service_impl.QuizServiceImpl;
+import com.game.quiz.service_impls.CommonServiceImpl;
+import com.game.quiz.service_impls.MessageServiceImpl;
+import com.game.quiz.service_impls.QuizServiceImpl;
 
 public class QuizConsole {
 
@@ -38,6 +40,8 @@ public class QuizConsole {
 		quizService.addQuestion("cendekiawan");
 		quizService.addQuestion("latihan");
 		quizService.addQuestion("belajar");
+		quizService.addQuestion("dokter");
+		quizService.addQuestion("akuntan");
 
 		for (int i = 0; i < quizService.getQustions().size(); i++) {
 			display(i);
@@ -45,31 +49,36 @@ public class QuizConsole {
 	}
 
 	public void display(int counter) {
+		LogManager.getLogManager().reset();
+		Logger logger = LogManager.getLogManager().getLogger("");
+		logger.addHandler(new QuizLogHandler());
+
 		try {
 			String question = quizService.getQuestion(counter);
 			String randomWord = commonService.generateRandomWord(question);
 
 			String tebak = "Tebak: " + randomWord + "\nJawab: ";
-			System.out.print(tebak);
 
+			logger.info(tebak);
 			String jawab = input.readLine();
-			
-			/** Prevent null pointer exception message raised when we force quit the program***/
-			if(jawab == null) {
+
+			/**
+			 * Prevent null pointer exception message raised when we force quit the program
+			 ***/
+			if (jawab == null) {
 				System.exit(0);
 			}
 			/*********************************************************************************/
-			
+
 			boolean message = commonService.checkAnswer(question, jawab.trim());
 			if (!message) {
 				throw new NotMatchException(messageService.onError());
 			}
 			messageService.onSuccess(commonService.getScore());
-			counter = counter + 1;
 		} catch (IOException e) {
-			e.printStackTrace();
+			logger.info(e.getLocalizedMessage() + "\n");
 		} catch (NotMatchException ne) {
-			System.out.println(ne.getLocalizedMessage());
+			logger.info(ne.getLocalizedMessage() + "\n");
 			this.display(counter);
 		}
 	}

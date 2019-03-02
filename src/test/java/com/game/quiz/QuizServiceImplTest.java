@@ -1,7 +1,9 @@
 package com.game.quiz;
 
 import org.junit.Test;
-import com.game.quiz.service_impl.QuizServiceImpl;
+
+import com.game.quiz.service_impls.QuizServiceImpl;
+
 import static org.junit.Assert.assertEquals;
 
 public class QuizServiceImplTest {

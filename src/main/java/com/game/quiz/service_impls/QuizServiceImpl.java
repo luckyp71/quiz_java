@@ -1,11 +1,11 @@
-package com.game.quiz.service_impl;
+package com.game.quiz.service_impls;
 
 import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
 import com.game.quiz.models.Quiz;
-import com.game.quiz.service.QuizService;
+import com.game.quiz.services.QuizService;
 
 public class QuizServiceImpl implements QuizService {
 	
@@ -13,8 +13,7 @@ public class QuizServiceImpl implements QuizService {
 
 	@Override
 	public List<String> getQustions() {
-		List<String> output = questionList.stream().map(i -> i.getQuestion()).collect(Collectors.toList());
-		return output;
+		return questionList.stream().map(Quiz::getQuestion).collect(Collectors.toList());
 	}
 
 	@Override

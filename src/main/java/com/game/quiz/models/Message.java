@@ -5,9 +5,6 @@ public class Message {
 	private String success;
 	private String error;
 	
-	//Default constructor
-	public Message() {}
-	
 	public String getSuccess() {
 		return success;
 	}

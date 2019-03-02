@@ -2,7 +2,7 @@ package com.game.quiz;
 
 import org.junit.Test;
 
-import com.game.quiz.service_impl.CommonServiceImpl;
+import com.game.quiz.service_impls.CommonServiceImpl;
 
 import static org.junit.Assert.assertEquals;
 
