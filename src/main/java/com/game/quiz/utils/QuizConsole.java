@@ -12,10 +12,10 @@ import com.game.quiz.service_impls.QuizServiceImpl;
 
 public class QuizConsole {
 
-	BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
-	QuizServiceImpl quizService = new QuizServiceImpl();
-	CommonServiceImpl commonService = new CommonServiceImpl();
-	MessageServiceImpl messageService = new MessageServiceImpl();
+	private BufferedReader input = new BufferedReader(new InputStreamReader(System.in));
+	private QuizServiceImpl quizService = new QuizServiceImpl();
+	private CommonServiceImpl commonService = new CommonServiceImpl();
+	private MessageServiceImpl messageService = new MessageServiceImpl();
 
 	public void start() {
 		quizService.addQuestion("book");

@@ -8,7 +8,7 @@ import static org.junit.Assert.assertEquals;
 
 public class QuizServiceImplTest {
 	
-	QuizServiceImpl service = new QuizServiceImpl();
+	private QuizServiceImpl service = new QuizServiceImpl();
 	
 	//Constructor
 	public QuizServiceImplTest() {

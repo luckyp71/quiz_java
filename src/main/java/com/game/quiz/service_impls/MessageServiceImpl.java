@@ -17,7 +17,7 @@ public class MessageServiceImpl implements MessageService {
 		this.successMessages = new String[] { "YOU ARE CORRECT!!!!!! Congrats, your point: ",
 				"Right!!!!! Congrats, your point: ", "Absolutely Right!!!! Congrats, congrats, your point: ",
 				"YOU GOT THAT RIGHT!!!! Congrats, your point: ", "VERY AWESOME!!!! Congrats, your point: ",
-				"MATCH!!!!!! Congrats, your point: ", " AWESOME!!!!!! Congrats, congrats, congrats, your point: " };
+				"MATCH!!!!!! Congrats, your point: ", "AWESOME!!!!!! Congrats, congrats, congrats, your point: " };
 
 		this.errorMessages = new String[] { "YOU WRONG!!!! Please try again!!!!!\n",
 				"SORRY, YOUR ANSWER IS EXTREMELY WRONG!!!! Please try again!!!!\n",

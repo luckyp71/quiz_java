@@ -9,7 +9,7 @@ import com.game.quiz.services.QuizService;
 
 public class QuizServiceImpl implements QuizService {
 	
-	List<Quiz> questionList = new ArrayList<>();
+	private List<Quiz> questionList = new ArrayList<>();
 
 	@Override
 	public List<String> getQustions() {

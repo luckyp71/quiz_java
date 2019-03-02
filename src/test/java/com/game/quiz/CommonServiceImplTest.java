@@ -10,7 +10,7 @@ import java.util.Arrays;
 
 public class CommonServiceImplTest {
 
-	CommonServiceImpl service = new CommonServiceImpl();
+	private CommonServiceImpl service = new CommonServiceImpl();
 
 	@Test
 	public void generateRandomWordTest() {
