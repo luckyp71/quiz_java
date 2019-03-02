@@ -11,7 +11,7 @@ public class MessageServiceImpl implements MessageService {
 	private String[] successMessages = new String[3];
 	private String[] errorMessages = new String[3];
 	private int randomIndex = 0;
-	private static final Logger logger = Logger.getLogger(MessageServiceImpl.class.getName());
+	private Logger logger = Logger.getLogger(MessageServiceImpl.class.getName());
 
 	public MessageServiceImpl() {
 		this.successMessages = new String[] { "YOU ARE CORRECT!!!!!! Congrats, your point: ",

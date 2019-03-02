@@ -14,7 +14,7 @@ public class CommonServiceImplTest {
 
 	@Test
 	public void generateRandomWordTest() {
-		String input = "mobil";
+		String input = "car";
 		char[] inputChars = input.toCharArray();
 		Arrays.sort(inputChars);
 		String inputString = String.valueOf(inputChars);
@@ -36,7 +36,7 @@ public class CommonServiceImplTest {
 	@Test
 	public void checkAnswerTest() {
 		boolean expectedResult = true;
-		boolean actualResult = service.checkAnswer("buku", "buku");
+		boolean actualResult = service.checkAnswer("book", "book");
 		
 		assertEquals(expectedResult, actualResult);
 	}
