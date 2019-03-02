@@ -12,8 +12,8 @@ public class QuizServiceImplTest {
 	
 	//Constructor
 	public QuizServiceImplTest() {
-		service.addQuestion("rumah");
-		service.addQuestion("mobil");
+		service.addQuestion("home");
+		service.addQuestion("car");
 		service.addQuestion("laptop");
 	}
 	
@@ -38,7 +38,7 @@ public class QuizServiceImplTest {
 	@Test
 	public void addQuestionTest() {
 		String expectedResult = "success";
-		String actualResult = service.addQuestion("buku");
+		String actualResult = service.addQuestion("book");
 		assertEquals(expectedResult, actualResult);
 	}
 }

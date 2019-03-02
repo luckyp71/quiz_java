@@ -14,15 +14,15 @@ public class MessageServiceImpl implements MessageService {
 	private static final Logger logger = Logger.getLogger(MessageServiceImpl.class.getName());
 
 	public MessageServiceImpl() {
-		this.successMessages = new String[] { "BENAR SEKALI!!!!!! Selamat, point anda: ",
-				"TEPAT!!!!! Selamat, point anda: ", "BETUL SEKALI!!!! Selamat, selamat, point anda: ",
-				"TEPAT SEKALI!!!! Selamat, point anda: ", "SANGAT TEPAT!!!! Selamat, point anda: ",
-				"COCOK!!!!!! Selamat, point anda: ", "SANGAT COCOK!!!!!! Selamat, selamat, point anda: " };
+		this.successMessages = new String[] { "YOU ARE CORRECT!!!!!! Congrats, your point: ",
+				"Right!!!!! Congrats, your point: ", "Absolutely Right!!!! Congrats, congrats, your point: ",
+				"YOU GOT THAT RIGHT!!!! Congrats, your point: ", "VERY AWESOME!!!! Congrats, your point: ",
+				"MATCH!!!!!! Congrats, your point: ", " AWESOME!!!!!! Congrats, congrats, congrats, your point: " };
 
-		this.errorMessages = new String[] { "MAAF ANDA SALAH!!!! Silahkan mencoba lagi!!!!!\n",
-				"MOHON MAAF, JAWABAN ANDA INI SALAH!!!! Silahkan mencoba lagi!!!!\n",
-				"ANDA HARUS MENJAWAB DENGAN BENAR!!!!!! Silahkan mencoba lagi!!!!\n",
-				"JAWABAN ANDA SANGAT TIDAK TEPAT!!!!!! Silahkan mencoba lagi!!!!\n" };
+		this.errorMessages = new String[] { "YOU WRONG!!!! Please try again!!!!!\n",
+				"SORRY, YOUR ANSWER IS EXTREMELY WRONG!!!! Please try again!!!!\n",
+				"YOU MUST ANSWER CORRECTLY!!!!!! Please try again!!!!\n",
+				"YOUR ANSWER IS ABSOLUTELY WRONG!!!!!! Please try again!!!!\n" };
 	}
 
 	@Override

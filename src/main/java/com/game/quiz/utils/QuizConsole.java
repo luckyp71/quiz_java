@@ -18,30 +18,21 @@ public class QuizConsole {
 	MessageServiceImpl messageService = new MessageServiceImpl();
 
 	public void start() {
-		quizService.addQuestion("buku");
-		quizService.addQuestion("rumah");
-		quizService.addQuestion("truk");
-		quizService.addQuestion("nampan");
-		quizService.addQuestion("televisi");
+		quizService.addQuestion("book");
+		quizService.addQuestion("home");
+		quizService.addQuestion("truck");
+		quizService.addQuestion("television");
 		quizService.addQuestion("radio");
-		quizService.addQuestion("divisi");
-		quizService.addQuestion("dividen");
-		quizService.addQuestion("saham");
-		quizService.addQuestion("bahasa");
-		quizService.addQuestion("pemrograman");
-		quizService.addQuestion("jaringan");
-		quizService.addQuestion("saraf");
+		quizService.addQuestion("division");
+		quizService.addQuestion("stock");
+		quizService.addQuestion("language");
+		quizService.addQuestion("programming");
+		quizService.addQuestion("network");
+		quizService.addQuestion("neuron");
 		quizService.addQuestion("buatan");
-		quizService.addQuestion("keuangan");
-		quizService.addQuestion("otomatisasi");
-		quizService.addQuestion("proses");
-		quizService.addQuestion("teknokrat");
-		quizService.addQuestion("teknokratik");
-		quizService.addQuestion("cendekiawan");
-		quizService.addQuestion("latihan");
-		quizService.addQuestion("belajar");
-		quizService.addQuestion("dokter");
-		quizService.addQuestion("akuntan");
+		quizService.addQuestion("financial");
+		quizService.addQuestion("learning");
+		quizService.addQuestion("accountant");
 
 		for (int i = 0; i < quizService.getQustions().size(); i++) {
 			display(i);
@@ -57,7 +48,7 @@ public class QuizConsole {
 			String question = quizService.getQuestion(counter);
 			String randomWord = commonService.generateRandomWord(question);
 
-			String tebak = "Tebak: " + randomWord + "\nJawab: ";
+			String tebak = "Guess: " + randomWord + "\nAnswer: ";
 
 			logger.info(tebak);
 			String jawab = input.readLine();
@@ -70,7 +61,7 @@ public class QuizConsole {
 			}
 			/*********************************************************************************/
 
-			boolean message = commonService.checkAnswer(question, jawab.trim());
+			boolean message = commonService.checkAnswer(question, jawab.trim().toLowerCase());
 			if (!message) {
 				throw new NotMatchException(messageService.onError());
 			}
